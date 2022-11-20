@@ -38,5 +38,12 @@ int main()
 
     vector1.at(0) = 1000;
 
+    cout << "\nDisplaying the contents of vector2d again: ";
+    display2dVectorContents(vector2d);
+
+    cout << "\nDisplaying the contents of vector1 again: ";
+    displayVectorContents(vector1);
+
+
     return 0;
 }
