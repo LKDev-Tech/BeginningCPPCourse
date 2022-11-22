@@ -10,12 +10,12 @@ void PrintNumbers(const vector<int> &v);
 void DisplayList(const vector<int>& v);
 void AddNumber(vector<int> &v);
 void DisplayAverage(const vector<int> &v);
-int GetAverage(const vector<int>& v);
+double GetAverage(const vector<int>& v);
 void DisplaySmallestNum(const vector<int> &v);
 void DisplayLargestNum(const vector<int> &v);
 void FindNumber(const vector<int> &v);
 vector<int> IndexList(const vector<int> &v, int num);
-
+void ClearList(vector<int> &v);
 
 int main() {
 	vector <int> nums{};
@@ -42,6 +42,9 @@ int main() {
 		case 'f': case 'F':
 			FindNumber(nums);
 			break;
+		case 'c': case'C':
+			ClearList(nums);
+			break;
 		case 'Q': case 'q':
 			cout << "Thank you for using the system.";
 			break;
@@ -55,7 +58,7 @@ int main() {
 }
 
 void ShowMenu() {
-	cout << "P - Print numbers in list\nA - Add a number\nM - Display average of the numbers\nS - Display the smallest number\nL - Display the largest number\nF - Find a number\nQ - quit\n";
+	cout << "P - Print numbers in list\nA - Add a number\nM - Display average of the numbers\nS - Display the smallest number\nL - Display the largest number\nF - Find a number\nC - Clear the list\nQ - quit\n";
 }
 
 void PrintNumbers(const vector<int> &v) {
@@ -73,7 +76,10 @@ void DisplayList(const vector<int>& v) {
 		cout << num << " ";
 }
 
-
+void ClearList(vector<int>& v) {
+	v.clear();
+	cout << "List successfully cleared!" << endl;
+}
 
 void AddNumber(vector<int> &v) {
 	int num{};
@@ -89,7 +95,7 @@ void DisplayAverage(const vector<int> &v) {
 	else cout << "Unable to determine the average - list is empty";
 }
 
-int GetAverage(const vector<int>& v) {
+double GetAverage(const vector<int>& v) {
 	double average{};
 	for (int num : v)
 		average += num;
