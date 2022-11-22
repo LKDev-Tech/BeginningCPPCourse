@@ -4,7 +4,7 @@
 
 using namespace std;
 
-vector <int> nums{ 2,4,5,1 };
+vector <int> nums{};
 
 void ShowMenu() {
 	cout << "P - Print numbers in list\nA - Add a number\nM - Display average of the numbers\nS - Display the smallest number\nL - Display the largest number\nQ - quit\n";
