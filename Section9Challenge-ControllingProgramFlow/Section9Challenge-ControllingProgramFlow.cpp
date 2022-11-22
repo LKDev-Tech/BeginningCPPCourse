@@ -39,7 +39,7 @@ void DisplayAverage() {
 		average /= static_cast<double>(nums.size());
 		cout << "The average of the list is: " << average << endl;
 	}
-	else cout << "Unable to determine the smallest number - list is empty";
+	else cout << "Unable to determine the average - list is empty";
 }
 
 void DisplaySmallestNum() {

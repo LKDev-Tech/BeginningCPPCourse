@@ -1,15 +1,20 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <string>
 
 using namespace std;
 
 void ShowMenu();
 void PrintNumbers(const vector<int> &v);
+void DisplayList(const vector<int>& v);
 void AddNumber(vector<int> &v);
 void DisplayAverage(const vector<int> &v);
+int GetAverage(const vector<int>& v);
 void DisplaySmallestNum(const vector<int> &v);
 void DisplayLargestNum(const vector<int> &v);
+void FindNumber(const vector<int> &v);
+vector<int> IndexList(const vector<int> &v, int num);
 
 
 int main() {
@@ -19,28 +24,25 @@ int main() {
 		ShowMenu();
 		cin >> option;
 		switch (option) {
-		case 'P':
-		case 'p':
+		case 'P': case 'p':
 			PrintNumbers(nums);
 			break;
-		case 'A':
-		case 'a':
+		case 'A': case 'a':
 			AddNumber(nums);
 			break;
-		case 'M':
-		case 'm':
+		case 'M': case 'm':
 			DisplayAverage(nums);
 			break;
-		case 'S':
-		case 's':
+		case 'S': case 's':
 			DisplaySmallestNum(nums);
 			break;
-		case 'L':
-		case 'l':
+		case 'L': case 'l':
 			DisplayLargestNum(nums);
 			break;
-		case 'Q':
-		case 'q':
+		case 'f': case 'F':
+			FindNumber(nums);
+			break;
+		case 'Q': case 'q':
 			cout << "Thank you for using the system.";
 			break;
 		default:
@@ -53,20 +55,25 @@ int main() {
 }
 
 void ShowMenu() {
-	cout << "P - Print numbers in list\nA - Add a number\nM - Display average of the numbers\nS - Display the smallest number\nL - Display the largest number\nQ - quit\n";
+	cout << "P - Print numbers in list\nA - Add a number\nM - Display average of the numbers\nS - Display the smallest number\nL - Display the largest number\nF - Find a number\nQ - quit\n";
 }
 
 void PrintNumbers(const vector<int> &v) {
 	if (v.size() > 0)
 	{
 		cout << "[ ";
-		for (int num : v)
-			cout << num << " ";
-		cout << "]";
+		DisplayList(v);
+		cout << "]" << endl;
 	}
 	else cout << "[] - the list is empty" << endl;
-	cout << endl;
 }
+
+void DisplayList(const vector<int>& v) {
+	for (int num : v)
+		cout << num << " ";
+}
+
+
 
 void AddNumber(vector<int> &v) {
 	int num{};
@@ -77,15 +84,17 @@ void AddNumber(vector<int> &v) {
 }
 
 void DisplayAverage(const vector<int> &v) {
-	double average{};
 	if (v.size() > 0)
-	{
-		for (int num : v)
-			average += num;
-		average /= static_cast<double>(v.size());
-		cout << "The average of the list is: " << average << endl;
-	}
-	else cout << "Unable to determine the smallest number - list is empty";
+		cout << "The average of the list is: " << GetAverage(v) << endl;
+	else cout << "Unable to determine the average - list is empty";
+}
+
+int GetAverage(const vector<int>& v) {
+	double average{};
+	for (int num : v)
+		average += num;
+	average /= static_cast<double>(v.size());
+	return average;
 }
 
 void DisplaySmallestNum(const vector<int> &v) {
@@ -102,4 +111,34 @@ void DisplayLargestNum(const vector<int> &v) {
 		cout << "The smallest number is: " << *largest << endl;
 	}
 	else cout << "Unable to determine largest number - list is empty" << endl;
+}
+
+void FindNumber(const vector<int> &v) {
+	int num{};
+	vector<int> indexes{};
+	if (v.size() > 0)
+	{
+		cout << "Please enter the number you wish to find: ";
+		cin >> num;
+		indexes = IndexList(v, num);
+		if (indexes.size() > 0)
+		{
+			cout << "The number " << num << " was found at indexes: ";
+			DisplayList(indexes);
+		}
+		else cout << "The number " << num << " was not found in the list";
+		cout << endl;
+	}
+	else cout << "Unable to search - list is empty" << endl;
+}
+
+vector<int> IndexList(const vector<int>& v, int numToFind) {
+	vector<int> indexes{};
+	auto it = v.begin();
+	while ((it = find_if(it, v.end(), [numToFind](int x) {return x == numToFind; })) != v.end())
+	{
+		indexes.push_back(distance(v.begin(), it));
+		it++;
+	}
+	return indexes;
 }
