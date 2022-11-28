@@ -37,8 +37,8 @@
 
 using namespace std;
 
-void print(const int[], const int);
-int *apply_all(int[], int, int[], int);
+void print(const int *const, const int);
+int *apply_all(const int *const, size_t, const int* const, size_t);
 
 int main() {
     const size_t array1_size{ 5 };
@@ -66,7 +66,7 @@ int main() {
     return 0;
 }
 
-void print(const int arr[], const int size){
+void print(const int *const arr, const int size){
     cout << "[ ";
     for (size_t i {0}; i < size; i++)
         cout << arr[i] << " ";
@@ -74,10 +74,9 @@ void print(const int arr[], const int size){
     cout << endl;
 }
 
-int* apply_all(int arr1[], int size1, int arr2[], int size2){
-    int newSize = size1 * size2;
+int* apply_all(const int *const arr1, size_t size1, const int *const arr2, size_t size2){
     int* newArr{ nullptr };
-    newArr = new int[newSize];
+    newArr = new int[size1 * size2];
     int index{0};
     for (size_t i{ 0 }; i < size2; i++)
         for (size_t j{ 0 }; j < size1; j++)
