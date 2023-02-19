@@ -17,7 +17,8 @@ Movies::~Movies() { }
 
 
 bool Movies::add_movie(std::string name, std::string rating, int watched) {
-    if(find_if(movies.begin(), movies.end(), [name](const Movie& obj) {return obj.get_name() == name; }) != movies.end()) return false;
+    std::vector<Movie>::iterator movieFound = find_if(movies.begin(), movies.end(), [name](const Movie& obj) {return obj.get_name() == name; });
+    if (movieFound != movies.end() || (*movieFound).get_name() == name) return false;
     else {
         movies.push_back(Movie(name, rating, watched));
         return true;
@@ -26,7 +27,7 @@ bool Movies::add_movie(std::string name, std::string rating, int watched) {
 
 bool Movies::increment_watched(std::string name) {
     std::vector<Movie>::iterator movieFound = find_if(movies.begin(), movies.end(), [name](const Movie& obj) {return obj.get_name() == name; });
-    if (movieFound != movies.end()) {
+    if (movieFound != movies.end() || (*movieFound).get_name() == name) {
         (*movieFound).increment_watched();
         return true;
     }
