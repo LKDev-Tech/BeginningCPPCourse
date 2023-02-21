@@ -9,8 +9,12 @@ bool CheckingAccount::withdraw(double amount) {
     return Account::withdraw(amount);
 }
 
-std::ostream& operator<<(std::ostream& os, const CheckingAccount& account) {
-    os << "[CheckingAccount: " << account.name << ": " << account.balance << "]";
-    return os;
+bool CheckingAccount::deposit(double amount) {
+    return Account::deposit(amount);
+}
+
+
+void CheckingAccount::display(std::ostream& os) const {
+    os << "[CheckingAccount: " << name << ": " << balance << "]";
 }
 

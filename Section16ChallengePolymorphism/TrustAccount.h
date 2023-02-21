@@ -1,6 +1,7 @@
 #ifndef _TRUSTACCOUNT_H_
 #define _TRUSTACCOUNT_H_
-
+#include <iostream>
+#include <string>
 #include "SavingsAccount.h"
 
 class TrustAccount : public SavingsAccount {
@@ -23,7 +24,7 @@ public:
 
     // Only allowed maximum of 3 withdrawals, each can be up to a maximum of 20% of the account's value
     bool withdraw(double amount);
-
+    virtual ~TrustAccount() = default;
     virtual void display(std::ostream& os)const;
 };
 
