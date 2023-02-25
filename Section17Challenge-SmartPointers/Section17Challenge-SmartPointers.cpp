@@ -13,11 +13,11 @@ public:
 };
 
 // Function prototypes
-std::unique_ptr<std::vector<std::shared_ptr<Test>>> make();
+auto make();
 void fill(std::vector<std::shared_ptr<Test>>& vec, int num);
 void display(const std::vector<std::shared_ptr<Test>>& vec);
 
-std::unique_ptr<std::vector<std::shared_ptr<Test>>> make(){
+auto make(){
     return std::make_unique<std::vector<std::shared_ptr<Test>>>();
 }
 
@@ -35,7 +35,7 @@ void display(const std::vector<std::shared_ptr<Test>>& vec) {
     std::cout << "Displaying Shared Pointer Vector Data" << std::endl;
     std::cout << "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=" << std::endl;
     for (const auto &i : vec)
-        std::cout << (*i).get_data() << std::endl;
+        std::cout << i->get_data() << std::endl;
 }
 
 int main() {
