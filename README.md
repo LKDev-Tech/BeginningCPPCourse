@@ -26,4 +26,5 @@ The course was done with Visual Studio 2022
 - [ ] 20. The Standard Template Library (STL)
 - [x] 21. Bonus Material and Source Code
 
-I realize this isn't the most up to date version of the course, however it still covers C++ 11, 17, and 20
+I realize this isn not the most up to date version of the course, however it still covers C++ 11, 17, and 20
+Another note: Yes I realise the solution is in the first folder and it is quite weirdly organized, however the projects load fine and you can run each of them individually without any issues. I created the first project "MyFirstApp" and forgot that the solution was not in the same folder so all the projects are outside of the main folder therefore it is very weirdly configured and the "MyFirstApp" project is hidden 2 folders deep, but everything works fine.
