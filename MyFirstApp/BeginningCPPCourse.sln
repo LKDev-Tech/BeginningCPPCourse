@@ -29,6 +29,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Section16ChallengePolymorph
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Section17Challenge-SmartPointers", "..\Section17Challenge-SmartPointers\Section17Challenge-SmartPointers.vcxproj", "{C31BE881-213B-497F-B136-38769BB33FBC}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Section18Challenge-ExceptionHandling", "..\Section18Challenge-ExceptionHandling\Section18Challenge-ExceptionHandling.vcxproj", "{29F1711B-79C2-4E57-9532-B806155D2023}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Section19Challenge_1-StreamManipulators", "..\Section19Challenge_1-StreamManipulators\Section19Challenge_1-StreamManipulators.vcxproj", "{420FF045-34C1-4BFB-ADC2-15FCEECF4C2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -141,6 +145,22 @@ Global
 		{C31BE881-213B-497F-B136-38769BB33FBC}.Release|x64.Build.0 = Release|x64
 		{C31BE881-213B-497F-B136-38769BB33FBC}.Release|x86.ActiveCfg = Release|Win32
 		{C31BE881-213B-497F-B136-38769BB33FBC}.Release|x86.Build.0 = Release|Win32
+		{29F1711B-79C2-4E57-9532-B806155D2023}.Debug|x64.ActiveCfg = Debug|x64
+		{29F1711B-79C2-4E57-9532-B806155D2023}.Debug|x64.Build.0 = Debug|x64
+		{29F1711B-79C2-4E57-9532-B806155D2023}.Debug|x86.ActiveCfg = Debug|Win32
+		{29F1711B-79C2-4E57-9532-B806155D2023}.Debug|x86.Build.0 = Debug|Win32
+		{29F1711B-79C2-4E57-9532-B806155D2023}.Release|x64.ActiveCfg = Release|x64
+		{29F1711B-79C2-4E57-9532-B806155D2023}.Release|x64.Build.0 = Release|x64
+		{29F1711B-79C2-4E57-9532-B806155D2023}.Release|x86.ActiveCfg = Release|Win32
+		{29F1711B-79C2-4E57-9532-B806155D2023}.Release|x86.Build.0 = Release|Win32
+		{420FF045-34C1-4BFB-ADC2-15FCEECF4C2B}.Debug|x64.ActiveCfg = Debug|x64
+		{420FF045-34C1-4BFB-ADC2-15FCEECF4C2B}.Debug|x64.Build.0 = Debug|x64
+		{420FF045-34C1-4BFB-ADC2-15FCEECF4C2B}.Debug|x86.ActiveCfg = Debug|Win32
+		{420FF045-34C1-4BFB-ADC2-15FCEECF4C2B}.Debug|x86.Build.0 = Debug|Win32
+		{420FF045-34C1-4BFB-ADC2-15FCEECF4C2B}.Release|x64.ActiveCfg = Release|x64
+		{420FF045-34C1-4BFB-ADC2-15FCEECF4C2B}.Release|x64.Build.0 = Release|x64
+		{420FF045-34C1-4BFB-ADC2-15FCEECF4C2B}.Release|x86.ActiveCfg = Release|Win32
+		{420FF045-34C1-4BFB-ADC2-15FCEECF4C2B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
