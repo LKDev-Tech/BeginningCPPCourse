@@ -1,20 +1,47 @@
-// Section18Challenge-ExceptionHandling.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+#include <vector>
+#include "Account.h"
+#include "SavingsAccount.h"
+#include "CheckingAccount.h"
+#include "TrustAccount.h"
+#include "AccountUtil.h"
+#include "I_Printable.h"
+#include "IllegalBalanceException.h"
+#include "InsufficientFundsException.h"
 
-int main()
-{
-    std::cout << "Hello World!\n";
+using namespace std;
+
+int main() {
+	std::unique_ptr<Account> moesAccount;
+	std::unique_ptr<Account> larrysAccount;
+	try
+	{
+		larrysAccount = std::make_unique<SavingsAccount>("Larry", -2000.0);
+		std::cout << *larrysAccount << std::endl;
+	}
+	catch (const IllegalBalanceException &ex)
+	{
+		std::cerr << ex.what() << std::endl;
+	}
+
+	try
+	{
+		moesAccount = std::make_unique<SavingsAccount>("Moe",1000.0);
+		std::cout << *moesAccount << std::endl;
+		moesAccount->withdraw(500.0);
+		std::cout << *moesAccount << std::endl;
+		moesAccount->withdraw(1000.0);
+		std::cout << *moesAccount << std::endl;
+
+	}
+	catch (const IllegalBalanceException &ex)
+	{
+		std::cerr << ex.what() << std::endl;
+	}
+	catch (const InsufficientFundsException &ex) {
+		std::cerr << ex.what() << std::endl;
+	}
+	std::cout << "Program completed Sufccessfully" << std::endl;
+	return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
