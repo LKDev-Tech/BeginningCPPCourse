@@ -35,6 +35,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Section19Challenge_1-Stream
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Section19Challenge_2-ReadingFromFile", "..\Section19Challenge_2-ReadingFromFile\Section19Challenge_2-ReadingFromFile.vcxproj", "{48E82099-47DB-4590-BB2F-CCF282E9FD02}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Section19Challenge_3-ReadingFromFile", "..\Section19Challenge_3-ReadingFromFile\Section19Challenge_3-ReadingFromFile.vcxproj", "{0834CFB4-2041-41A0-9E30-2B5C0DB0E9C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -171,6 +173,14 @@ Global
 		{48E82099-47DB-4590-BB2F-CCF282E9FD02}.Release|x64.Build.0 = Release|x64
 		{48E82099-47DB-4590-BB2F-CCF282E9FD02}.Release|x86.ActiveCfg = Release|Win32
 		{48E82099-47DB-4590-BB2F-CCF282E9FD02}.Release|x86.Build.0 = Release|Win32
+		{0834CFB4-2041-41A0-9E30-2B5C0DB0E9C0}.Debug|x64.ActiveCfg = Debug|x64
+		{0834CFB4-2041-41A0-9E30-2B5C0DB0E9C0}.Debug|x64.Build.0 = Debug|x64
+		{0834CFB4-2041-41A0-9E30-2B5C0DB0E9C0}.Debug|x86.ActiveCfg = Debug|Win32
+		{0834CFB4-2041-41A0-9E30-2B5C0DB0E9C0}.Debug|x86.Build.0 = Debug|Win32
+		{0834CFB4-2041-41A0-9E30-2B5C0DB0E9C0}.Release|x64.ActiveCfg = Release|x64
+		{0834CFB4-2041-41A0-9E30-2B5C0DB0E9C0}.Release|x64.Build.0 = Release|x64
+		{0834CFB4-2041-41A0-9E30-2B5C0DB0E9C0}.Release|x86.ActiveCfg = Release|Win32
+		{0834CFB4-2041-41A0-9E30-2B5C0DB0E9C0}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -45,7 +45,7 @@ int main()
     if (!testScores.is_open())
     {
         std::cout << "Error: coulnd't open file.\nTerminating..........." << std::endl;
-        return 1;
+        return -1;
     }
 
     std::getline(testScores, answers);
